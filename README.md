@@ -1,4 +1,4 @@
-# 🗺️ GIS Dataset Dealing Note #1: CO₂ Raster Downscaling
+# GIS Dataset Dealing Note #1: CO₂ Raster Downscaling
 
 > **Case #1:** Downscaling coarse-resolution road transport carbon emission raster data into high-resolution grids using road network density information.
 
@@ -21,18 +21,17 @@ Suggestions, feedback, and academic discussions are always welcome! ❤
 
 ---
 
-## ❓ 2. What Does This Code Do?
+## 2. What Does This Code Do?
 
 In this case, I attempted to downscale coarse-resolution road transport carbon emission raster data (*Coarse-resolution Raster*, approximately **11.1 km** grid size) into fine-resolution grids (*Fine-resolution Fishnet*, **1 km** fishnet grids) using **weighted road network density information** as spatial weights.
 
 ---
 
-### ⚙️ Step 0 — Parameter Settings
+### Step 0 — Parameter Settings
 In this step, global parameters are defined, including the **city name**, **raster path**, **fishnet boundary**, **road network layers**, and **road weights**.
 
 Different road types are assigned specific weights based on their estimated contribution to traffic emissions:
-
-| 🛣️ Road Type | ⚖️ Weight |
+| Road Type | Weight |
 | :--- | :--- |
 | **Highway** | `0.1933` |
 | **National Road** | `0.2353` |
