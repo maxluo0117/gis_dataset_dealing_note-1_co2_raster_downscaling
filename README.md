@@ -106,7 +106,7 @@ The final high-resolution downscaled transport emission *GeoDataFrame* is serial
 final_gdf.to_file("downscaled_transport_emissions.shp")
 ```
 
-## 🛠️ 4. GeoPandas Syntax Used in This Case
+## 4. GeoPandas Syntax Used in This Case
 
 This project leverages several core functionalities of the **GeoPandas** library to handle vector data operations. Below is a quick reference guide to the syntax used in this workflow:
 
