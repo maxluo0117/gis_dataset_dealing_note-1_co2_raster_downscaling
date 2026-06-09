@@ -30,7 +30,7 @@ In this case, I attempted to downscale coarse-resolution road transport carbon e
 ### Step 0 — Parameter Settings
 In this step, global parameters are defined, including the **city name**, **raster path**, **fishnet boundary**, **road network layers**, and **road weights**.
 
-Different road types are assigned specific weights based on their estimated contribution to traffic emissions:
+The road weight was calculated as the average of the weights for various vehicle types on different road classifications, as provided in Reference [1] :
 | Road Type | Weight |
 | :--- | :--- |
 | **Highway** | `0.1933` |
@@ -92,7 +92,7 @@ road_match.geometry.length
 ### Step 5 — Downscaling Calculation
 
 The structural weight $W_i$ for each fine grid unit is calculated based on the localized road infrastructure attributes:
-$$W_i = \text{road\_weight} \times \text{road\_length} \times \text{grid\_area}$$
+$$W_i = \text{road\\_weight} \times \text{road\\_length} \times \text{grid\\_area}$$
 Then, group-by normalization is applied to aggregate the weights within each corresponding coarse raster cell boundary:
 ```python
 # Sum up total weights within each coarse grid mapping group
@@ -138,3 +138,6 @@ transportation-related data processing,
 and research-oriented Python GIS usage.
 
 The code is still under continuous refinement and optimization.
+
+Reference:
+[1]Zheng, B., Huo, H., Zhang, Q., Yao, Z. L., Wang, X. T., Yang, X. F., Liu, H., and He, K. B.: High-resolution mapping of vehicle emissions in China in 2008, Atmos. Chem. Phys., 14, 9787–9805, https://doi.org/10.5194/acp-14-9787-2014, 2014.
